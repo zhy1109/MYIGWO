@@ -1,4 +1,4 @@
-function [UpdatedPositions, UpdatedFit] = DualMutationScheme1(Positions, SelectedIndividuals, Fit, fobj, Alpha_pos, Beta_pos, Delta_pos, iter, Max_iter)
+function [UpdatedPositions, UpdatedFit] = DualMutationScheme(Positions, SelectedIndividuals, Fit, fobj, Alpha_pos, Beta_pos, Delta_pos, iter, Max_iter)
     % Determine global bounds across all positions
     allPositions = Positions;
     lb_all = min(allPositions, [], 1);
@@ -10,9 +10,9 @@ function [UpdatedPositions, UpdatedFit] = DualMutationScheme1(Positions, Selecte
     p_cauchy = 0.4 * (1 - progress);
 
     % Nonlinear leadership weights (exponential adjustment)
-    w_alpha = 0.5 + 0.5/(1 + exp(-10*(progress-0.5)));  % S-shaped growth
-    w_beta  = 0.3 * exp(-3*progress);                    % Exponential decay
-    w_delta = 0.2 * exp(-5*progress);                    % Rapid decay
+    w_alpha = 0.5 + 0.5/(1 + exp(-10*(progress-0.5)));  
+    w_beta  = 0.3 * exp(-3*progress);                    
+    w_delta = 0.2 * exp(-5*progress);                    
     
     % Normalize weights
     total_w = w_alpha + w_beta + w_delta;
