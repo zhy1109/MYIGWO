@@ -1,1 +1,1 @@
-The paper will be fully open-sourced after publication and we are currently open-sourcing parts of our code.
+Our code will be fully open-sourced after the paper is published, and we are currently open-sourcing part of the code first.
