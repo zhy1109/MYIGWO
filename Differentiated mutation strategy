@@ -21,8 +21,8 @@ function [UpdatedPositions, UpdatedFit] = DualMutationScheme1(Positions, Selecte
     w_delta = w_delta / total_w;
 
     % Nonlinear step size control
-    base_step    = 0.5 * (1 - progress^1.5);            % Power-law decay
-    chaos_factor = 1.1 + 0.2 * sin(20 * progress);       % Chaotic fluctuation
+    base_step    = 0.5 * (1 - progress^1.5);      
+    chaos_factor = 1.1 + 0.2 * sin(20 * progress);      
 
     %% Step 1: Remove SelectedIndividuals from the population
     removalIndices = [];
